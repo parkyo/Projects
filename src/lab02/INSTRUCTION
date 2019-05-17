@@ -1,0 +1,77 @@
+
+Range Finder
+
+Problem
+
+  Given a list of integers in the range determine the range of the values.
+
+Input Format
+
+  The input will consist of a single line of space delimited integer values. The integers are not necessarily ordered and will   be in the range [-1000...1000]. There will be at least 2 integers on the line. There is no stated limit to the number of       integers on the line.
+
+Output Format
+
+  The output will be a single line of text with the format:
+
+  The range is X.
+  with X replaced by the range of the values.
+
+Sample Input
+
+  1 2 3 4 5
+
+Sample Output
+
+  The range is 4.
+
+Mean Means
+
+Problem
+
+    When scientific experiments are performed they are often performed multiple times and the results are averaged to reduce     the effect of random variation in process or measurement. Another common methodology performs multiple sets of trials. The     average of the trials in each set is computed and then the final result is found by averaging the set averages.
+
+  For example, consider the following results in which two sets of trials have been performed. In Set 1, 5 trials were           performed and in Set 2, 3 trials were performed.
+
+  Set 1: 2.3, 2.2, 2.3, 2.4, 2.3
+  Set 2: 2.3, 2.2, 2.1
+  The averages for these sets is:
+
+  Set 1: 2.3
+  Set 2: 2.2
+  The final result for the experiment is then obtained by averaging the set averages, giving 2.25.
+
+  For this problem you are given sets of experimental results and asked to compute the final result for the experiment as just   described.
+
+Additional Requirements
+
+  At least 1 test written by you must read its input from a text file and at least 1 test written by you must read the correct   output from a text file. These may be the same test.
+
+Input Format
+
+  The input will consist of zero or more lines of comma delimited decimal values followed by a line containing only the value   -1. Each comma delimited values indicate the result of a single trial. Each line contains the results of each trial in a       set. The result of each trial will be a decimal value between positive and negative one million and representable in a         double value. Lines will consist of no more than 50 values. There will be no more than 1000 lines. The line containing only   -1 indicates the end of the input.
+
+Output Format
+
+  If there are zero lines of comma delimited values the output should be:
+
+  No lines.
+  Otherwise the output will be the final result of the experiment as a single decimal value rounded to two decimal places. For   example:
+  2.50
+  
+Sample Input 1
+
+-1
+
+Sample Output 1
+
+No lines.
+
+Sample Input 2
+
+1.2,2.3,3.4,4.5
+2.4,3.5,4.6
+-1
+
+Sample Output 2
+
+3.18
