@@ -1,0 +1,33 @@
+
+Problem
+
+  Given N integers, count the number of pairs of those integers that have a difference equal to another integer K.
+
+Input Format
+
+  The first line of input will contain 2 space delimited integers giving the values of N and K with the following constraints:
+
+  0 <= N <= 50000
+  0 <= K <= 5000
+  The second line of input will contain N space delimited integers. The value of each integer will be in the range [0...2500].
+
+Output Format
+
+  The output will be a single integer indicating the number of pairs of integers with difference K.
+
+Sample Input 1
+
+ 5 2
+ 1 5 3 4 2
+  
+Sample Output 1
+
+3
+
+Sample Input 2
+
+10 1  
+2326 530 163 718 1024 1912 635 2254 2181 1793
+Sample Output 2
+
+0
