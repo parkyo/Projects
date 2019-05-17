@@ -1,0 +1,204 @@
+Younse Park & Tanay Murdia
+
+Ex1: m
+Ex2: /0
+Ex3: Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+	at java.lang.String.charAt(String.java:658)
+	at lab01.WordAnalyzer.firstRepeatedCharacter(WordAnalyzer.java:34)
+	at lab01.WordAnalyzer.main(WordAnalyzer.java:105)
+	
+Ex4: 
+A.Index out of bounds exception
+B. String index out of range: 9
+C. String.java:658
+D. 34
+E. firstRepeatedCharacter
+F. 105
+
+Ex5: it brings us to the associated line that the error is being created
+
+Ex6: Preference ->general -> editor -> text editor -> check "Show line numbers"
+
+Ex7. It throws null pointer exception at line 32
+
+Ex8. public WordAnalyzer(String aWord) {
+		word = aWord;
+		if (aWord == null) {
+			throw new IllegalArgumentException("nullPointerException occurred");
+		}
+	}
+	
+Ex9. Exception in thread "main" java.lang.IllegalArgumentException: nullPointerException occurred
+	at lab01.WordAnalyzer.<init>(WordAnalyzer.java:22)
+	at lab01.WordAnalyzer.main(WordAnalyzer.java:107)
+	
+Ex10. IndexOutOfBoundsException, the last line executed was 67(if (word.charAt(i) == c) {
+
+Ex11. it threw assertionError with a message, "pos must be >=0 but was -1". the line number was 66
+
+Ex.12: assert pos < word.length() : "pos must be < word length but was" + pos;
+
+Ex.15:
+	i = 0
+	 ch = D
+	nextCh = i
+	i = 1
+	 ch = i
+	nextCh = c
+	i = 2
+	 ch = c
+	nextCh = k
+	i = 3
+	 ch = k
+	nextCh = i
+	i = 4
+	 ch = i
+	nextCh = n
+	i = 5
+	 ch = n
+	nextCh = s
+	i = 6
+	 ch = s
+	nextCh = o
+	i = 7
+	 ch = o
+	nextCh = n
+	i = 8
+	 ch = n
+	Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+		at java.lang.String.charAt(String.java:658)
+		at lab01.WordAnalyzer.firstRepeatedCharacter(WordAnalyzer.java:40)
+		at lab01.WordAnalyzer.main(WordAnalyzer.java:113)
+	
+Ex.16: it shows that the error occurred because it reached to the last character of the word
+
+Ex.17: public char firstRepeatedCharacter() {
+		for (int i = 0; i+1 < word.length(); i++) {
+			System.out.println("i = " + i);
+
+			char ch = word.charAt(i);
+			System.out.println(" ch = " + ch);
+			char nextCh = word.charAt(i + 1);
+			System.out.println("nextCh = " + nextCh );
+			if (ch == nextCh) {
+				return ch;
+			}
+		}
+		return '\0';
+	}
+	
+Ex.18 : r
+
+Ex.19 : p
+
+Ex.20 : 
+	Jan 24, 2019 4:14:34 PM lab01.WordAnalyzer firstMultipleCharacter
+	INFO: Entering firstMultipleCharacter method
+	Jan 24, 2019 4:14:34 PM lab01.WordAnalyzer firstMultipleCharacter
+	INFO: i = 0
+	Jan 24, 2019 4:14:34 PM lab01.WordAnalyzer firstMultipleCharacter
+	INFO: Looking for ch = P
+	Jan 24, 2019 4:14:34 PM lab01.WordAnalyzer firstMultipleCharacter
+	INFO: Found next P at nextLoc = 0
+	Jan 24, 2019 4:14:34 PM lab01.WordAnalyzer firstMultipleCharacter
+	INFO: Multiple found - Exiting firstMultipleCharacter
+	P
+	
+Ex.21: we can see that the nextLoc is not being updated after a loop
+
+Ex.22: 
+
+	public char firstMultipleCharacter() {
+			Logger.getLogger("fmp").setLevel(Level.INFO);
+			Logger.getLogger("fMP").info("Entering firstMultipleCharacter method");
+			for (int i = 0; i < word.length(); i++) {
+				Logger.getLogger("fMP").info("i = " + i);
+				char ch = word.charAt(i);
+				Logger.getLogger("fMP").info("Looking for ch = " + ch);
+				int nextLoc = find(ch, i+1);
+				Logger.getLogger("fMP").info("Found next " + ch + " at nextLoc = " + nextLoc);
+				if (nextLoc >= 0) {
+					Logger.getLogger("fMP").info("Multiple found - Exiting firstMultipleCharacter");
+					return ch;
+				}
+			}
+			Logger.getLogger("fMP").info("No multiple - Exiting firstMultipleCharacter");
+			return 0;
+		}
+		
+Ex.23: Logger.getLogger("fMP").setLevel(Level.OFF);
+
+Ex.24: 5, 5
+
+Ex.25: 5, 4
+
+Ex.26: the debug tap appears on the left with the line number of the breakpoint. The WordAnalyzer also has a green highlight on the line that it is paused at
+
+Ex.27: the debug tap tells us which line it's paused at and we can also look at WordAnalyzer class and fine the green line
+
+Ex.28: the arrow and the green highlight moves to the next line
+
+Ex.29: The arrow and the green highlight moves to the first line of the associated method
+
+Ex.30: this, WordAnalyzer (id=18) which is not a variable or value, because when we stepped into, the line called this method but there is no variable generated
+
+Ex.31: numGroups, 0, because it just created a variable with a default value of 0;
+
+Ex.32: chPos, 1, because chPos was created in the for loob starting at 1
+
+Ex.33: it brings us to charAt method in String.class. With step return tool, we return back to where we left
+
+Ex.34: No, because the value of word.charAt(chPos) is not same as that of word.charAt(chPos + 1)
+
+Ex.35: Yes, because the values of word.charAt(chPos -1) is different from word.charAt(chPos)
+
+Ex.36: 1, 2 because when the first if statement was false, it didn't get to the next if statement where the value of numGroups is updated
+
+Ex.37: On the debug tap, it shows us <terminated>
+
+Ex.38: 
+
+	public int countRepeatedCharacters() {
+			/*
+			 * Go through the word comparing the character at each position to the
+			 * next. If a repetition is found, determine if it is at the start of a
+			 * group (e.g. the first bb in "abbbcd"). If it is then add 1 to the
+			 * number of groups.
+			 */
+			int numGroups = 0; // the number of groups seen so far.
+			for (int chPos = 0; chPos < word.length() - 1; chPos++) {
+				if (word.charAt(chPos) == word.charAt(chPos + 1)) {
+					// found a repetition
+					if(chPos == 0) {
+						numGroups++;
+					}else if (word.charAt(chPos - 1) != word.charAt(chPos)) {
+						// it's at the start of a group
+						numGroups++;
+					}
+				}
+			}
+			return numGroups;
+		}
+
+Ex.39: 
+
+	/**
+	 * find the position of repeating character
+	 * @param c
+	 * @param pos
+	 * @return i or -1 if none is found
+	 */
+	
+	/*
+	 * find the position of the repeating character
+	 */
+	private int findSameCharacterPosition(char c, int pos) {
+		assert pos >= 0 : "pos must be >= 0 but was " + pos; //it asserts that the pos has to be bigger or equal to 0
+		assert pos < word.length() : "pos must be < word length but was" + pos; //it asserts that the pos has to be smaller than the word length
+		for (int i = pos; i < word.length(); i++) { //for loop through the characters of the given word
+			if (word.charAt(i) == c) { //checks if the found character is the same as the given character
+				return i; //returns the position of the character
+			}
+		}
+		return -1; //if none is found
+	}
